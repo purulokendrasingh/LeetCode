@@ -12,10 +12,10 @@ class Solution:
                 idx = i
                 break
         if idx == -1:
-            for i in range(t+1, n):
-                if palindrome[i] != 'a':
-                    idx = i
-                    break
+            # for i in range(t+1, n):
+            #     if palindrome[i] != 'a':
+            #         idx = i
+            #         break
             if idx == -1 or idx == n:
                 return palindrome[:-1]+'b'
         if idx == n:

@@ -1,1 +1,1 @@
-​
+Another way to solve this would be to reverse s and find the LCS of s and s_reverse.

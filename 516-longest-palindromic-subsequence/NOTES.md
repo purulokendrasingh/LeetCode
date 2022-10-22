@@ -1,5 +1,6 @@
 Another way to solve this would be to reverse s and find the LCS of s and s_reverse.
 
+```
 class Solution:
     def longestPalindromeSubseq(self, s: str) -> int:
         dp = defaultdict(lambda: None)
@@ -18,3 +19,4 @@ class Solution:
             return dp[p1, p2]
         
         return helper(len(s)-1, len(r)-1)
+  ```

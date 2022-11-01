@@ -13,8 +13,6 @@ class Solution:
                 for k in range(i,j):
                     temp.append(helper(i,k) + helper(k+1,j) + values[i-1]*values[j]*values[k])
                 dp[i,j] = min(temp)
-                print(i,j, temp)
             return dp[i,j]
         
-        print(dp)
         return helper(1, n-1)

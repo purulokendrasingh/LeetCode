@@ -1,10 +1,5 @@
-NAIVE SOLUTION:
+1. NAIVE SOLUTION:
 ```
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
 class Solution:
 def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
 s = []
@@ -17,4 +12,18 @@ while curr:
 curr.val = s.pop()
 curr = curr.next
 return head
+```
+​
+2. Optimized solution without recursion:
+```
+class Solution:
+def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+prev = None
+curr = head
+while curr != None:
+temp = curr.next
+curr.next = prev
+prev = curr
+curr = temp
+return prev
 ```

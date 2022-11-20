@@ -7,6 +7,5 @@ class Solution:
             if i[1] <= start:
                 start = i[0]
             else:
-                print(i)
                 ans += 1
         return ans

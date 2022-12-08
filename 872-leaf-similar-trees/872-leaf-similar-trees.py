@@ -17,9 +17,7 @@ class Solution:
                 
         inorder(root1)
         a = temp
-        print(a)
         temp = []
         inorder(root2)
-        print(temp)
         return a == temp
                 

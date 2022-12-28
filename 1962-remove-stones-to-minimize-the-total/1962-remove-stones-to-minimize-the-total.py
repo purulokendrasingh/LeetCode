@@ -3,7 +3,5 @@ class Solution:
         piles = [-i for i in piles]
         heapq.heapify(piles)
         for i in range(k):
-            temp = heapq.heappop(piles)
-            temp //= 2
-            heapq.heappush(piles, temp)
+            heapq.heapreplace(piles, piles[0]//2)
         return abs(sum(piles))

@@ -11,8 +11,6 @@ class Solution:
             
             if rem == 0:
                 ans += div
-            elif rem == 1:
-                ans += div + 1
             else:
                 ans += div + 1
         return ans

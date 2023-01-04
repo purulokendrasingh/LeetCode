@@ -4,20 +4,15 @@ class Solution:
         if 1 in counts:
             return -1
         
-        dp = defaultdict(lambda: None)
-        
-        def helper(n):
-            if dp[n] != None:
-                return dp[n]
-            if n == 0:
-                dp[n] = 0
-            elif n < 0:
-                dp[n] = 100000
-            else:
-                dp[n] = min(1 + helper(n-3), 1 + helper(n-2))
-            return dp[n]
-        
         ans = 0
         for i in counts:
-            ans += helper(i)
+            div = i//3
+            rem = i%3
+            
+            if rem == 0:
+                ans += div
+            elif rem == 1:
+                ans += div + 1
+            else:
+                ans += div + 1
         return ans

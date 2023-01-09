@@ -1,14 +1,10 @@
 class Solution:
     def validSubarrays(self, nums: List[int]) -> int:
-        n = len(nums)
+        stack = []
         ans = 0
-        for i in range(n):
-            for j in range(i, n):
-                if i == j:
-                    ans += 1
-                    continue
-                if nums[i] <= nums[j]:
-                    ans += 1
-                else:
-                    break
+        for i, num in enumerate(nums):
+            while stack and num < stack[-1]:
+                stack.pop()
+            stack.append(num)
+            ans += len(stack)
         return ans

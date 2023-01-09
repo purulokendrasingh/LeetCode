@@ -2,7 +2,7 @@ class Solution:
     def validSubarrays(self, nums: List[int]) -> int:
         stack = []
         ans = 0
-        for i, num in enumerate(nums):
+        for num in nums:
             while stack and num < stack[-1]:
                 stack.pop()
             stack.append(num)

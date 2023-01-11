@@ -1,5 +1,17 @@
 class Solution:
     def addToArrayForm(self, num: List[int], k: int) -> List[int]:
+        num = num[::-1]
         n = len(num)
-        ans = str(sum([num[i]*(10**(n-i-1)) for i in range(n)]) + k)
-        return [int(i) for i in ans]
+        carry = k
+        for i in range(n):
+            if carry == 0:
+                break
+            temp = num[i] + carry
+            num[i] = temp%10
+            carry = temp//10
+        if carry != 0:
+            sCarry = str(carry)
+            return [int(i) for i in sCarry] + num[::-1]
+        else:
+            return num[::-1]
+            

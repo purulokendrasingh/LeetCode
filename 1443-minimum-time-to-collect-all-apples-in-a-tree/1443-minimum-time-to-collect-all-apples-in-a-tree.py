@@ -18,13 +18,10 @@ class Solution:
                     ans += dfs(node)
             if ans == 0:
                 if hasApple[n]:
-                    print(2, n)
                     return 2
                 else:
-                    print(ans, n)
                     return ans
             else:
-                print(ans+2, n)
                 return ans + 2
             
         vis[0] = True

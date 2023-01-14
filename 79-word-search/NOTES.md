@@ -1,1 +1,1 @@
-​
+The simulation based solutions works the best if we handle the worst cases explicitly which might take a lot of time if processed through general approach (like if all elements in the board are same but there is a character in the word which is different hence we can straight away handle that case instead of traversing over the whole array and searching.

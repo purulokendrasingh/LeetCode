@@ -9,6 +9,12 @@ class Solution:
             for j in range(n):
                 if board[i][j] == sw:
                     sp.append((i,j))
+        
+        if len(word) > m*n:
+            return False
+        
+        if len(sp) == m*n:
+            return False if ansLen != word.count(board[0][0]) else True
                     
         if len(word) == 1:
             return True if sp else False

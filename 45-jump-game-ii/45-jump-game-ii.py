@@ -1,22 +1,15 @@
 class Solution:
     def jump(self, nums: List[int]) -> int:
-        dp = defaultdict(lambda: None)
+        maxx = 0
+        ans = 0
+        curr = 0
         n = len(nums)
         
-        @lru_cache(1000)
-        def helper(i):
-            if dp[i] != None:
-                return dp[i]
-            if i == n-1:
-                dp[i] = 0
-            else:
-                minn = 10000
-                for j in range(nums[i], 0, -1):
-                    if i+j < n:
-                        temp = 1 + helper(i+j)
-                        if temp < minn:
-                            minn = temp
-                dp[i] = minn
-            return dp[i]
-        
-        return helper(0)
+        for i in range(n-1):
+            maxx = max(maxx, i + nums[i])
+            if i == curr:
+                ans += 1
+                curr = maxx
+            if curr >= n-1:
+                break
+        return ans

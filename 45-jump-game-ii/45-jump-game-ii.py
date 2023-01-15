@@ -3,6 +3,7 @@ class Solution:
         dp = defaultdict(lambda: None)
         n = len(nums)
         
+        @lru_cache(1000)
         def helper(i):
             if dp[i] != None:
                 return dp[i]

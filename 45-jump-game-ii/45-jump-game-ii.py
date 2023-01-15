@@ -10,7 +10,7 @@ class Solution:
                 dp[i] = 0
             else:
                 minn = 10000
-                for j in range(1, nums[i]+1):
+                for j in range(nums[i], 0, -1):
                     if i+j < n:
                         temp = 1 + helper(i+j)
                         if temp < minn:

@@ -9,10 +9,13 @@ class Solution:
             if i == n-1:
                 dp[i] = 0
             else:
-                dp[i] = 10000
+                minn = 10000
                 for j in range(1, nums[i]+1):
                     if i+j < n:
-                        dp[i] = min(dp[i], 1 + helper(i+j))
+                        temp = 1 + helper(i+j)
+                        if temp < minn:
+                            minn = temp
+                dp[i] = minn
             return dp[i]
         
         return helper(0)

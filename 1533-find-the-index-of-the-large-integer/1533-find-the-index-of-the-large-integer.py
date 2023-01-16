@@ -19,6 +19,8 @@ class Solution:
         n = reader.length()
         l,r = 0, n-1
         while l <= r:
+            if l == r:
+                return l
             mid = l+r
             print(l, mid//2, r)
             if mid%2 == 0: #ODD
@@ -30,9 +32,7 @@ class Solution:
                     r = mid-1
                 else:
                     l = mid+1
-                
-                if l == r:
-                    return l
+                    
             else: #EVEN
                 mid //= 2
                 res = reader.compareSub(l, mid, mid+1, r)
@@ -40,6 +40,3 @@ class Solution:
                     r = mid
                 else:
                     l = mid+1
-                    
-                if l == r:
-                    return l

@@ -1,5 +1,4 @@
 class Solution:
     def maximumProduct(self, nums: List[int]) -> int:
-        n = len(nums)
-        nums.sort()
-        return max(nums[n-1]*nums[n-2]*nums[n-3], nums[0]*nums[1]*nums[n-1])
+        a,b = heapq.nlargest(3, nums), heapq.nsmallest(2, nums)
+        return max(a[0]*a[1]*a[2], a[0]*b[0]*b[1])

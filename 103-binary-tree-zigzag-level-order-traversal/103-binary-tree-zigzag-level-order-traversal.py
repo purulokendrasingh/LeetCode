@@ -14,17 +14,16 @@ class Solution:
         rev = False
         while q:
             count = len(q)
-            temp = deque()
+            temp = []
             for _ in range(count):
                 t = q.popleft()
-                if rev:
-                    temp.appendleft(t.val)
-                else:
-                    temp.append(t.val)
+                temp.append(t.val)
                 if t.left:
                     q.append(t.left)
                 if t.right:
                     q.append(t.right)
+            if rev:
+                temp = temp[::-1]
             ans.append(temp)
             rev = not rev
         return ans

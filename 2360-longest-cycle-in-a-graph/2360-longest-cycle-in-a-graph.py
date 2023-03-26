@@ -1,6 +1,6 @@
 class Solution:
     def longestCycle(self, edges: List[int]) -> int:
-        g =  defaultdict(lambda: -1)
+        g =  {}
         n = len(edges)
         vis = defaultdict(bool)
         

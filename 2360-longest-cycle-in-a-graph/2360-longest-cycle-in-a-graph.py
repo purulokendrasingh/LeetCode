@@ -30,14 +30,7 @@ class Solution:
                 
             if med == 1:
                 return -1
-            return med
-                
-            # if visited.count(med) == 1:
-            #     return -1
-            # else:
-            #     t = [i for i, j in enumerate(visited) if j == med]
-            #     return t[1] - t[0]
-            
+            return med       
         
         ans = -1
         for i in range(n):

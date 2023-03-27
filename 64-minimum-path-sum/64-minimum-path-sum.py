@@ -10,12 +10,12 @@ class Solution:
             if r == m-1 and c == n-1:
                 dp[r,c] = grid[r][c]
             else:
-                temp = []
+                temp = 10000
                 if r != m-1:
-                    temp.append(helper(r+1, c))
+                    temp = min(temp, helper(r+1, c))
                 if c != n-1:
-                    temp.append(helper(r, c+1))
-                dp[r,c] = grid[r][c] + min(temp)
+                    temp = min(temp, helper(r, c+1))
+                dp[r,c] = temp + grid[r][c]
             return dp[r,c]
         
         return helper(0, 0)

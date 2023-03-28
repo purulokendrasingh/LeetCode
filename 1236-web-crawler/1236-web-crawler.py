@@ -11,8 +11,7 @@
 
 class Solution:
     def crawl(self, startUrl: str, htmlParser: 'HtmlParser') -> List[str]:
-        temp = startUrl.replace('http://', '')
-        hostName = 'http://' + temp[:temp.index('/')] if '/' in temp else startUrl
+        hostName = startUrl.split('/')[2]
         print(hostName)
         visited = []
         q = deque()
@@ -23,7 +22,7 @@ class Solution:
                 temp = q.popleft()
                 if temp in visited:
                     continue
-                if temp.startswith(hostName):
+                if hostName in temp:
                     visited.append(temp)
                     nodes = htmlParser.getUrls(temp)
                     for node in nodes:

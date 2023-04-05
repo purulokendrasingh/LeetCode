@@ -8,38 +8,21 @@
 
 class Solution:
     def copyRandomBinaryTree(self, root: 'Optional[Node]') -> 'Optional[NodeCopy]':
-        nto = {}
         otn = {}
-        random_mapping = {}
         
         def preorder(head):
+            node = None
             if head:
-                if head.random:
-                    random_mapping[head] = head.random
-                preorder(head.left)
-                preorder(head.right)
+                if head not in otn:
+                    node = NodeCopy(head.val)
+                    otn[head] = node
+                else:
+                    node = otn[head]
+                    return node
+                node.random = preorder(head.random)
+                node.left = preorder(head.left)
+                node.right = preorder(head.right)
+            return node
         
-        preorder(root)
-        
-        def helper(rootOld):
-            if rootOld:
-                rootNew = NodeCopy(rootOld.val)
-                nto[rootNew] = rootOld
-                otn[rootOld] = rootNew
-                rootNew.left = helper(rootOld.left)
-                rootNew.right = helper(rootOld.right)
-                return rootNew
-            
-        def preorderNew(head):
-            if head:
-                if nto[head] in random_mapping:
-                    head.random = otn[random_mapping[nto[head]]]
-                preorderNew(head.left)
-                preorderNew(head.right)          
-        
-        ans = helper(root)
-        preorderNew(ans)
-        
-        return ans
-            
-            
+        ans = preorder(root)
+        return ans      

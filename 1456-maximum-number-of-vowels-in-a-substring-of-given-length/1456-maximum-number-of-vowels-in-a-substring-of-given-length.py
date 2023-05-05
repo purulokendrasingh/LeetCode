@@ -9,11 +9,6 @@ class Solution:
                 cnt += 1
             vc.append(cnt)
             
-        print(vc)
-        
-        # if k == 1 and vc[-1] > 0:
-        #     return 1
-            
         ans = 0
             
         for i in range(n-k+1):

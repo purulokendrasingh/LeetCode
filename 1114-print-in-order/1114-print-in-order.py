@@ -1,28 +1,30 @@
 class Foo:
     def __init__(self):
-        self.m1 = False
-        self.m2 = False
+        self.l1 = threading.Lock()
+        self.l2 = threading.Lock()
+        self.l1.acquire()
+        self.l2.acquire()
 
 
     def first(self, printFirst: 'Callable[[], None]') -> None:
         
         # printFirst() outputs "first". Do not change or remove this line.
         printFirst()
-        self.m1 = True
+        self.l1.release()
 
 
     def second(self, printSecond: 'Callable[[], None]') -> None:
         
         # printSecond() outputs "second". Do not change or remove this line.
-        while not self.m1:
+        with self.l1:
             pass
         printSecond()
-        self.m2 = True
+        self.l2.release()
 
 
     def third(self, printThird: 'Callable[[], None]') -> None:
         
         # printThird() outputs "third". Do not change or remove this line.
-        while not self.m2:
+        with self.l2:
             pass
         printThird()

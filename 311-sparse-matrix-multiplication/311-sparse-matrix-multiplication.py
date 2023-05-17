@@ -10,7 +10,8 @@ class Solution:
             for j in range(n):
                 temp = 0
                 for l in range(k):
-                    temp += mat1[i][l]*mat2[l][j]
+                    if mat1[i][l] != 0 and mat2[l][j] != 0:
+                        temp += mat1[i][l]*mat2[l][j]
                 matt[i][j] = temp
         
         return matt

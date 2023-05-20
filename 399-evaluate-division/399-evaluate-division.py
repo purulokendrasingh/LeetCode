@@ -13,9 +13,9 @@ class Solution:
             if sourceNode not in vertices or targetNode not in vertices:
                 return -1
             
-            vis = defaultdict(bool)
+            vis = set()
             q = deque([(sourceNode, 1)])
-            vis[sourceNode] = True
+            vis.add(sourceNode)
             while q:
                 count = len(q)
                 for _ in range(count):
@@ -23,8 +23,8 @@ class Solution:
                     if u == targetNode:
                         return mult
                     for v, edge in graph[u]:
-                        if not vis[v]:
-                            vis[v] = True
+                        if v not in vis:
+                            vis.add(v)
                             q.append((v, mult*edge))
             return -1
         

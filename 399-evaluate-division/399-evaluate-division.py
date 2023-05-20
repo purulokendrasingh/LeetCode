@@ -13,6 +13,7 @@ class Solution:
             if sourceNode not in vertices or targetNode not in vertices:
                 return -1
             
+            # Using vis as a set here
             vis = set()
             q = deque([(sourceNode, 1)])
             vis.add(sourceNode)
@@ -28,7 +29,25 @@ class Solution:
                             q.append((v, mult*edge))
             return -1
         
+        def dfs(node, targetNode, mult, vis):
+            # Using vis as a defaultdict here
+            if node == targetNode:
+                return mult
+            default = -1
+            for v, edge in graph[node]:
+                if not vis[v]:
+                    vis[v] = True
+                    temp = dfs(v, targetNode, mult*edge, vis.copy())
+                    if temp != -1:
+                        return temp
+            return default
+        
         ans = []
         for s,t in queries:
-            ans.append(bfs(s,t))
+            # ans.append(bfs(s,t))
+            if s not in vertices or t not in vertices:
+                ans.append(-1)
+                continue
+            vis = defaultdict(bool)
+            ans.append(dfs(s, t, 1, vis))
         return ans

@@ -12,8 +12,6 @@ class Solution:
         def bfs(sourceNode, targetNode):
             if sourceNode not in vertices or targetNode not in vertices:
                 return -1
-            # elif sourceNode == targetNode:
-            #     return 1
             
             vis = defaultdict(bool)
             q = deque([(sourceNode, 1)])

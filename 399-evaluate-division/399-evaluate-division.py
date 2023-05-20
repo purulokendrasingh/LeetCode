@@ -44,7 +44,10 @@ class Solution:
         
         ans = []
         for s,t in queries:
+            # Using the bfs approach
             # ans.append(bfs(s,t))
+            
+            # Using the dfs approach
             if s not in vertices or t not in vertices:
                 ans.append(-1)
                 continue

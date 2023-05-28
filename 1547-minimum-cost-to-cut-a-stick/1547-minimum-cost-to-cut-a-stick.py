@@ -23,6 +23,6 @@ class Solution:
                     dp[l,r] = 0
             return dp[l,r]
         
-        cuts = sorted(cuts)
+        cuts = set(cuts)
         
         return helper(0, n, cuts)

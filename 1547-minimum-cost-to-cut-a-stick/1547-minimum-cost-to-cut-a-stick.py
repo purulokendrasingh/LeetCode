@@ -14,7 +14,7 @@ class Solution:
                     if c < r and c > l:
                         if not cPass:
                             cPass = True
-                        a = cuts[::]
+                        a = cuts.copy()
                         a.remove(c)
                         temp = min(temp, helper(l, c, a) + helper(c, r, a) + r-l)
                 if cPass:

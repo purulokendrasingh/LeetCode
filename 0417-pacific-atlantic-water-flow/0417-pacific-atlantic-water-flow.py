@@ -15,8 +15,6 @@ class Solution:
                 ao =  True
             
             if po and ao:
-                # dp[r,c] = [po,ao]
-                # return dp[r,c]
                 return [po, ao]
             
             if r > 0 and (r-1,c) not in vis and heights[r-1][c] <= heights[r][c]:
@@ -35,9 +33,7 @@ class Solution:
                 tpo, tao = helper(r,c+1,vis|{(r,c)})
                 po = po or tpo
                 ao = ao or tao
-                
-            # dp[r,c] = [po,ao]
-            # return dp[r,c]
+
             return [po, ao]
         
         ans = []

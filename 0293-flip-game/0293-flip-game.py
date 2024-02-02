@@ -8,8 +8,5 @@ class Solution:
         while pointer < n-1:
             if currentState[pointer:pointer+2] == '++':
                 ans.append(currentState[:pointer]+'--'+currentState[pointer+2:])
-            # elif currentState[pointer:pointer+2] == '--':
-            #     t = currentState[:pointer]+'++'+currentState[pointer+2:]
-            #     ans.append(t)
             pointer += 1
         return ans

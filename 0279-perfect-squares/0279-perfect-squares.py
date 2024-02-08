@@ -10,7 +10,7 @@ class Solution:
             else:
                 max_square = math.floor(math.sqrt(i))
                 ans = 10000
-                for num in range(1, max_square+1):
+                for num in range(2, max_square+1):
                     ans = min(ans, 1 + helper(i - num**2))
                 dp[i] = ans
             return dp[i]

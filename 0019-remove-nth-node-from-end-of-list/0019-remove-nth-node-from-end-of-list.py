@@ -8,19 +8,20 @@ class Solution:
         if head is None or head.next is None:
             return None
         
-        l = 0
+        delay = n
+        count = 0
         temp = head
+        new_temp = head
         while temp:
-            l += 1
+            if delay >= 0:
+                delay -= 1
+            else:
+                new_temp = new_temp.next
             temp = temp.next
+            count += 1
             
-        if l == n:
+        if count == n:
             return head.next
             
-        l = l-n-1
-        temp = head
-        while l > 0:
-            l -= 1
-            temp = temp.next
-        temp.next = temp.next.next
+        new_temp.next = new_temp.next.next
         return head

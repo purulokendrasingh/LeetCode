@@ -6,7 +6,7 @@ class Solution:
         for i in range(n):
             temp = sum(c[:i])
             for j in range(i+1, n):
-                if abs(c[j] - c[i]) > k:
+                if c[j] - c[i] > k:
                     temp += (c[j]-c[i]-k)
             
             ans = min(ans, temp)

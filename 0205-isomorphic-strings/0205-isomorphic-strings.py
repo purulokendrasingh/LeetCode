@@ -5,6 +5,6 @@ class Solution:
             if i not in dict1 and j not in dict2:
                 dict1[i] = j
                 dict2[j] = i
-            elif (i in dict1 and j not in dict2) or (i not in dict1 and j in dict2) or (dict1[i] != j and dict2[j] != i):
+            elif (i in dict1 and dict1[i] != j) or (j in dict2 and dict2[j] != i):
                 return False
         return True

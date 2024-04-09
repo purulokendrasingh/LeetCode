@@ -15,8 +15,6 @@ class Solution:
         for i in range(m):
             for j in range(n):
                 if matrix[i][j] != 0:
-                    if i in row_ends:
-                        matrix[i][j] = 0
-                    elif j in col_ends:
+                    if i in row_ends or j in col_ends:
                         matrix[i][j] = 0
                 

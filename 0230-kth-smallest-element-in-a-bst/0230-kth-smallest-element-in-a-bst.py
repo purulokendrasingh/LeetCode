@@ -9,16 +9,13 @@ class Solution:
         node = root
         stack = []
         while True:
-            if node is not None:
+            while node is not None:
                 stack.append(node)
                 node = node.left
-            elif stack:
-                node = stack.pop()
-                k -= 1
-                if k == 0:
-                    return node.val
-                node = node.right
-            else:
-                break
+            node = stack.pop()
+            k -= 1
+            if k == 0:
+                return node.val
+            node = node.right
                 
         return -1

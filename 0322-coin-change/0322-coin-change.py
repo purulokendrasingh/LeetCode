@@ -8,12 +8,11 @@ class Solution:
                 return dp[i]
             if i == 0:
                 dp[i] = 0
-            elif i < 0:
-                dp[i] = float('inf')
             else:
                 ans = float('inf')
                 for j in coins:
-                    ans = min(ans, 1 + helper(i-j))
+                    if i >= j:
+                        ans = min(ans, 1 + helper(i-j))
                 dp[i] = ans
             return dp[i]
         

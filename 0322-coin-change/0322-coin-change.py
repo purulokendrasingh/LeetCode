@@ -3,21 +3,21 @@ class Solution:
         coins.sort()
         dp = defaultdict(lambda: None)
         
-        def helper(k):
-            if dp[k] != None:
-                return dp[k]
-            if k < 0:
-                dp[k] = float('inf')
-            elif k == 0:
-                dp[k] = 0
+        def helper(i):
+            if dp[i] is not None:
+                return dp[i]
+            if i == 0:
+                dp[i] = 0
+            elif i < 0:
+                dp[i] = float('inf')
             else:
                 ans = float('inf')
-                isValid = False
-                for i in coins:
-                    ans = min(ans, 1 + helper(k-i))
-                dp[k] = ans
-    
-            return dp[k]
+                for j in coins:
+                    ans = min(ans, 1 + helper(i-j))
+                dp[i] = ans
+            return dp[i]
         
         ans = helper(amount)
-        return ans if ans < 1000000 else -1
+        if ans == float('inf'):
+            return -1
+        return ans

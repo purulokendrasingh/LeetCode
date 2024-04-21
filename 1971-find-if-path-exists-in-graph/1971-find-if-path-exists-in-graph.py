@@ -13,7 +13,7 @@ class Solution:
         while q:
             c = len(q)
             for i in range(c):
-                temp = q.popleft()
+                temp = q.pop()
                 for j in d[temp]:
                     if vis[j]:
                         continue

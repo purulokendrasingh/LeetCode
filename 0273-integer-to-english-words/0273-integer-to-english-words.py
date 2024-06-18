@@ -31,11 +31,13 @@ class Solution:
             70: 'Seventy',
             80: 'Eighty',
             90: 'Ninety',
+            100: 'Hundred'
         }
         
-        coll_words = [(10**9, 'Billion'), (10**6, 'Million'), (1000, 'Thousand'), (100, 'Hundred')]
+        coll_words = [(10**9, 'Billion'), (10**6, 'Million'), (1000, 'Thousand')]
         
         def helper(number):
+            # Not greater than thousand
             res = []
             v = number//100
             number %= 100

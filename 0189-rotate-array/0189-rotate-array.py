@@ -14,4 +14,8 @@ class Solution:
             nums[l], nums[r] = nums[r], nums[l]
             l += 1
             r -= 1
-        nums.reverse()
+        l,r = 0,len(nums)-1
+        while l < r:
+            nums[l], nums[r] = nums[r], nums[l]
+            l += 1
+            r -= 1

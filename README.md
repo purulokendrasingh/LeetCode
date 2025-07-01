@@ -7,11 +7,13 @@ Collection of LeetCode questions solved by Puru Lokendra Singh.
 |  |
 | ------- |
 | [0036-valid-sudoku](https://github.com/purulokendrasingh/LeetCode/tree/master/0036-valid-sudoku) |
+| [0594-longest-harmonious-subsequence](https://github.com/purulokendrasingh/LeetCode/tree/master/0594-longest-harmonious-subsequence) |
 | [3434-find-the-number-of-distinct-colors-among-the-balls](https://github.com/purulokendrasingh/LeetCode/tree/master/3434-find-the-number-of-distinct-colors-among-the-balls) |
 ## Hash Table
 |  |
 | ------- |
 | [0036-valid-sudoku](https://github.com/purulokendrasingh/LeetCode/tree/master/0036-valid-sudoku) |
+| [0594-longest-harmonious-subsequence](https://github.com/purulokendrasingh/LeetCode/tree/master/0594-longest-harmonious-subsequence) |
 | [3434-find-the-number-of-distinct-colors-among-the-balls](https://github.com/purulokendrasingh/LeetCode/tree/master/3434-find-the-number-of-distinct-colors-among-the-balls) |
 ## Simulation
 |  |
@@ -26,4 +28,16 @@ Collection of LeetCode questions solved by Puru Lokendra Singh.
 |  |
 | ------- |
 | [0036-valid-sudoku](https://github.com/purulokendrasingh/LeetCode/tree/master/0036-valid-sudoku) |
+## Sliding Window
+|  |
+| ------- |
+| [0594-longest-harmonious-subsequence](https://github.com/purulokendrasingh/LeetCode/tree/master/0594-longest-harmonious-subsequence) |
+## Sorting
+|  |
+| ------- |
+| [0594-longest-harmonious-subsequence](https://github.com/purulokendrasingh/LeetCode/tree/master/0594-longest-harmonious-subsequence) |
+## Counting
+|  |
+| ------- |
+| [0594-longest-harmonious-subsequence](https://github.com/purulokendrasingh/LeetCode/tree/master/0594-longest-harmonious-subsequence) |
 <!---LeetCode Topics End-->
